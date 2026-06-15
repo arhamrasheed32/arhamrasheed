@@ -31,12 +31,16 @@ function ExplosionParticles({ phaseProgress }: { phaseProgress: number }) {
     return { positions, velocities, colors }
   }, [])
 
+  const lastProgress = useRef(-1)
   useFrame(() => {
     if (!ref.current) return
+    if (phaseProgress === lastProgress.current) return
+    lastProgress.current = phaseProgress
+    
     const pos = ref.current.geometry.attributes.position.array as Float32Array
     for (let i = 0; i < count; i++) {
       const spread = phaseProgress * 18
-      pos[i * 3] = velocities[i * 3] * spread
+      pos[i * 3]     = velocities[i * 3] * spread
       pos[i * 3 + 1] = velocities[i * 3 + 1] * spread
       pos[i * 3 + 2] = velocities[i * 3 + 2] * spread
     }

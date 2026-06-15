@@ -57,8 +57,8 @@ function JourneyScene() {
       <CinematicCamera />
 
       {/* Global Starfield and Cosmos Sparkles visible from start to finish */}
-      <Stars radius={150} depth={70} count={4000} factor={6} saturation={0} fade speed={0.4} />
-      <Sparkles count={350} scale={45} size={3} speed={0.12} opacity={0.15} color="#7DD3FC" />
+      <Stars radius={150} depth={70} count={1500} factor={6} saturation={0} fade speed={0.4} />
+      <Sparkles count={150} scale={45} size={3} speed={0.12} opacity={0.15} color="#7DD3FC" />
 
       {/* Only first 5 phases exist simultaneously in world-space; camera travels to each */}
       <Phase1_Present phaseProgress={p(0)} />
@@ -75,7 +75,7 @@ function JourneyScene() {
 export function ScrollScene() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 12], fov: 45 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [0, 0, 12], fov: 45 }} dpr={[1, 1.5]}>
         <JourneyScene />
       </Canvas>
     </div>
