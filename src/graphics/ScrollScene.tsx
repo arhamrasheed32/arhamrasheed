@@ -52,7 +52,7 @@ function JourneyScene() {
   return (
     <>
       <color attach="background" args={['#020305']} />
-      <fogExp2 attach="fog" color="#020305" density={0.015} />
+      <fogExp2 attach="fog" args={['#020305', 0.015]} />
 
       <CinematicCamera />
 

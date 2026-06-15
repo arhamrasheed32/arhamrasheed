@@ -131,7 +131,7 @@ function Scene() {
     <>
       {/* Layer 1: Far Universe with subtle volumetric fog */}
       <color attach="background" args={['#020305']} />
-      <fogExp2 attach="fog" color="#020305" density={0.025} />
+      <fogExp2 attach="fog" args={['#020305', 0.025]} />
 
       {/* Lighting: Soft glow, Blue ambient, Purple rim */}
       <ambientLight intensity={0.1} color="#ffffff" />
