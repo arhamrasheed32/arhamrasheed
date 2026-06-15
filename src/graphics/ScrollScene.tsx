@@ -75,7 +75,7 @@ function JourneyScene() {
 export function ScrollScene() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 12], fov: 45 }} dpr={[1, 1.5]}>
+      <Canvas camera={{ position: [0, 0, 12], fov: 45 }} dpr={1}>
         <JourneyScene />
       </Canvas>
     </div>

@@ -111,7 +111,7 @@ export default function Home() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute w-[600px] h-[600px] rounded-full blur-[140px] pointer-events-none"
+          className="absolute w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{
             background: 'radial-gradient(circle, rgba(45,212,191,0.3) 0%, rgba(167,139,250,0.2) 50%, transparent 70%)',
           }}
