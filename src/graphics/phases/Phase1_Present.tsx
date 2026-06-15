@@ -34,6 +34,8 @@ function CrystalCore({ transparency }: { transparency: number }) {
           clearcoat={1}
           clearcoatRoughness={0.05}
           ior={1.2}
+          resolution={128}
+          samples={4}
         />
       </mesh>
     </Float>
