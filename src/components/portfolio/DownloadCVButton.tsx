@@ -46,13 +46,8 @@ export function DownloadCVButton() {
     // Sequence timing: End at 4.0s, triggering download
     setTimeout(() => {
       setIsAnimating(false)
-      // Programmatic download
-      const link = document.createElement('a')
-      link.href = '/Arham_Rasheed_CV.pdf'
-      link.download = 'Arham_Rasheed_CV.pdf'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
+      // Use window.open for cross-platform compatibility (iOS/Android block programmatic anchor clicks)
+      window.open('/Arham_Rasheed_CV.pdf', '_blank')
     }, 4000)
   }
 
