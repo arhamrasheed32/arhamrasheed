@@ -5,6 +5,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export function DownloadCVButton() {
   const [isAnimating, setIsAnimating] = useState(false)
+  const [assemblyParticles, setAssemblyParticles] = useState<Array<{
+    id: number
+    xOffset: number
+    yOffset: number
+    delay: number
+    duration: number
+    size: number
+    color: string
+  }>>([])
 
   const handleClick = (e: React.MouseEvent) => {
     if (isAnimating) {
@@ -14,6 +23,24 @@ export function DownloadCVButton() {
     
     // Prevent default to run the cinematic sequence first
     e.preventDefault()
+    
+    // Generate particles here so window is only accessed in the browser
+    const colors = [
+      'bg-cyan-300 shadow-[0_0_15px_rgba(103,232,249,1)]', 
+      'bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,1)]', 
+      'bg-purple-400 shadow-[0_0_15px_rgba(192,132,252,1)]',
+      'bg-fuchsia-300 shadow-[0_0_15px_rgba(240,171,252,1)]'
+    ]
+    const particles = Array.from({ length: 200 }).map((_, i) => ({
+      id: i,
+      xOffset: (Math.random() - 0.5) * window.innerWidth * 1.5,
+      yOffset: Math.random() * window.innerHeight * 1.2 + 200,
+      delay: Math.random() * 0.7 + 0.3,
+      duration: Math.random() * 1.0 + 0.8,
+      size: Math.random() * 3 + 1.5,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    }))
+    setAssemblyParticles(particles)
     setIsAnimating(true)
 
     // Sequence timing: End at 4.0s, triggering download
@@ -29,24 +56,6 @@ export function DownloadCVButton() {
     }, 4000)
   }
 
-  // Generate 200 tiny particles for the assembly effect
-  const assemblyParticles = Array.from({ length: 200 }).map((_, i) => {
-    const colors = [
-      'bg-cyan-300 shadow-[0_0_15px_rgba(103,232,249,1)]', 
-      'bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,1)]', 
-      'bg-purple-400 shadow-[0_0_15px_rgba(192,132,252,1)]',
-      'bg-fuchsia-300 shadow-[0_0_15px_rgba(240,171,252,1)]'
-    ];
-    return {
-      id: i,
-      xOffset: (Math.random() - 0.5) * window.innerWidth * 1.5,
-      yOffset: Math.random() * window.innerHeight * 1.2 + 200,
-      delay: Math.random() * 0.7 + 0.3, // 0.3s to 1.0s
-      duration: Math.random() * 1.0 + 0.8, // 0.8s to 1.8s
-      size: Math.random() * 3 + 1.5, // 1.5px to 4.5px
-      color: colors[Math.floor(Math.random() * colors.length)]
-    }
-  })
 
   return (
     <div className="relative">

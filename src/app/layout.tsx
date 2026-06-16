@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/providers/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Career OS | Executive Dashboard",
-  description: "Advanced, futuristic, premium enterprise-grade Career Operating System.",
+  title: "AR | Arham Rasheed",
+  description: "Portfolio of Arham Rasheed — Computer Science Engineer specializing in AI, ML, and Full-Stack Development.",
 };
 
 import { AudioPlayer } from "@/components/AudioPlayer";
