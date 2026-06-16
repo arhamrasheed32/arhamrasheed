@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'DuneRise';
   src: url('/fonts/dune-rise.otf') format('opentype'),
-       url('/fonts/dune-rise.ttf') format('truetype');
+    url('/fonts/dune-rise.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

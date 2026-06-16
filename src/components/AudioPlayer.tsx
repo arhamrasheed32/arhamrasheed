@@ -9,11 +9,26 @@ export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [hasInteracted, setHasInteracted] = useState(false)
 
-  // Handle initial play on user interaction to bypass autoplay restrictions
+  // Attempt to play immediately on mount. If blocked by browser policy, fallback to interaction listeners.
   useEffect(() => {
+    const playAudio = async () => {
+      if (audioRef.current && audioRef.current.paused) {
+        audioRef.current.volume = 0.3 // Default volume
+        try {
+          await audioRef.current.play()
+          setIsPlaying(true)
+          setHasInteracted(true)
+        } catch (err) {
+          console.warn("Autoplay blocked by browser. Waiting for interaction.", err)
+        }
+      }
+    }
+
+    playAudio()
+
     const handleInteraction = () => {
       if (!hasInteracted && audioRef.current) {
-        audioRef.current.volume = 0.3 // Default volume
+        audioRef.current.volume = 0.3
         audioRef.current.play().then(() => {
           setIsPlaying(true)
           setHasInteracted(true)

@@ -15,6 +15,7 @@ import { Leadership } from '@/components/portfolio/Leadership'
 import { Languages } from '@/components/portfolio/Languages'
 import { Contact } from '@/components/portfolio/Contact'
 import { ProfessionalSummary } from '@/components/portfolio/ProfessionalSummary'
+import { DownloadCVButton } from '@/components/portfolio/DownloadCVButton'
 import { motion } from 'framer-motion'
 
 function SilverySeparator() {
@@ -74,7 +75,7 @@ export default function Home() {
               animation: 'shimmer 8s linear infinite',
             }}
           >
-            Arham Rasheed
+            Arham<br />Rasheed
           </h1>
           <p className="text-base md:text-lg text-white/40 font-light tracking-widest uppercase font-dune">
             Computer Science Engineer
@@ -141,7 +142,7 @@ export default function Home() {
                 animation: 'shimmer 8s linear infinite',
               }}
             >
-              arham
+              Arham
             </motion.h1>
           </div>
 
@@ -159,7 +160,7 @@ export default function Home() {
                 animation: 'shimmer 8s linear infinite',
               }}
             >
-              rasheed
+              Rasheed
             </motion.h1>
           </div>
 
@@ -187,7 +188,7 @@ export default function Home() {
               initial: { opacity: 0, y: 24 },
               animate: { opacity: 1, y: 0, transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.3 } }
             }}
-            className="max-w-3xl md:max-w-6xl mt-64 space-y-8 text-left px-4"
+            className="max-w-3xl md:max-w-6xl mt-40 space-y-8 text-left px-4"
           >
             <p
               className="text-xl md:text-2xl font-medium tracking-tight leading-relaxed text-transparent bg-clip-text"
@@ -219,80 +220,85 @@ export default function Home() {
             >
               This portfolio highlights my projects, research, technical skills, certifications, and professional journey as I continue exploring emerging technologies and building impactful solutions.
             </p>
+
+            {/* Cinematic Download CV Button */}
+            <div className="pt-8 flex justify-center md:justify-start relative">
+              <DownloadCVButton />
+            </div>
           </motion.div>
 
           {/* Education Section */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <Education />
           </div>
 
           {/* Animated Silvery Divider */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <SilverySeparator />
           </div>
 
           {/* Experience Section */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <Experience />
           </div>
 
           {/* Animated Silvery Divider */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <SilverySeparator />
           </div>
 
           {/* Projects Section */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <Projects />
           </div>
 
           {/* Animated Silvery Divider */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <SilverySeparator />
           </div>
 
           {/* Technical Skills Section */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <TechSkills />
           </div>
 
           {/* Animated Silvery Divider */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <SilverySeparator />
           </div>
 
           {/* Certifications Section */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <Certifications />
           </div>
 
           {/* Animated Silvery Divider */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <SilverySeparator />
           </div>
 
           {/* Leadership Section */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <Leadership />
           </div>
 
           {/* Animated Silvery Divider */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <SilverySeparator />
           </div>
 
           {/* Languages Section */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <Languages />
           </div>
 
           {/* Animated Silvery Divider */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <SilverySeparator />
           </div>
 
           {/* Contact & Footer Section */}
-          <div className="w-full mt-64">
+          <div className="w-full mt-40">
             <Contact />
           </div>
         </motion.div>

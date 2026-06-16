@@ -79,7 +79,7 @@ export function Phase4_BigBang({ phaseProgress }: { phaseProgress: number }) {
 
       {/* Singularity point */}
       <mesh>
-        <sphereGeometry args={[Math.max(0.03, 0.5 - phaseProgress * 0.47), 16, 16]} />
+        <sphereGeometry args={[Math.max(0, 0.5 - phaseProgress * 0.5), 16, 16]} />
         <meshBasicMaterial color="#FFFFFF" />
       </mesh>
 
